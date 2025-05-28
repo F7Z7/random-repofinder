@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 export default function Languages() {
     const languages = [
@@ -23,11 +23,11 @@ export default function Languages() {
         "Lua",
         "Assembly"
     ];
-const language = languages.map(name=>({
-        id:uuidv4(),
-        name: name
-    }
+    const language = languages.map(name => ({
+            id: uuidv4(),
+            name: name
+        }
 
-));
-    return console.log(languages);
+    ));
+    return Languages;
 }
