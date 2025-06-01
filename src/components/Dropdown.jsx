@@ -6,7 +6,7 @@ export default function Dropdown() {
         <form className="w-64 text-sm">
             <label
                 htmlFor="language"
-                className="block mb-2 text-white tracking-wide"
+                className="block mb-2 text-white font-semibold tracking-wide text-start"
             >
                 Choose a programming language:
             </label>
