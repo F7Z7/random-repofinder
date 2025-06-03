@@ -4,6 +4,7 @@ import Dropdown from "../components/Dropdown.jsx";
 import {useNavigate} from "react-router-dom";
 import {FetchRepo} from "../components/fetchRepo.jsx";
 import Button from "../components/Button.jsx";
+import {GitFork, Star, User} from "lucide-react";
 
 export default function Hero() {
     const [count, setCount] = useState(0);
@@ -11,12 +12,15 @@ export default function Hero() {
     const navigate = useNavigate();
 
     const handleSubmit = async () => {
-        if (!selectedLang || count <= 0) return;
+        if (!selectedLang || count <= 0) {
+            alert("Please select a language and enter a valid count");
+            return;
+        }
 
         try {
             const repos = await FetchRepo(selectedLang, count);
-            console.log('Repos:', repos[0].name);
-            // navigate(`'/r`)
+            console.log('Repos:', repos);
+            navigate(`/results?lang=${selectedLang}&count=${count}`);
         } catch (error) {
             console.error('Error fetching repos:', error);
         }
@@ -62,6 +66,7 @@ export default function Hero() {
                     <Button content="Reset Selection" functionCall={resetOption}/>
                 </div>
             </div>
+
         </div>
     );
 }

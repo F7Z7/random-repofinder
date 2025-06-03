@@ -16,7 +16,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/results"
+                    path="/Results"
                     element={
                         <div className="flex flex-col items-center justify-center bg-gray-900 min-h-screen">
                             <Results />
