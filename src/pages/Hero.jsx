@@ -1,20 +1,34 @@
-import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+
 import Dropdown from "../components/Dropdown.jsx";
+import {useNavigate} from "react-router-dom";
+import {FetchRepo} from "../components/fetchRepo.jsx";
+import Button from "../components/Button.jsx";
 
 export default function Hero() {
     const [count, setCount] = useState(0);
     const [selectedLang, setSelectedLang] = useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleSubmit = () => {
-        // if (!selectedLang || count <= 0) return;
-        // navigate(`/results?lang=${selectedLang}&count=${count}`);
+    const handleSubmit = async () => {
+        if (!selectedLang || count <= 0) return;
+
+        try {
+            const repos = await FetchRepo(selectedLang, count);
+            console.log('Repos:', repos[0].name);
+            // navigate(`'/r`)
+        } catch (error) {
+            console.error('Error fetching repos:', error);
+        }
+    }
+    const resetOption = () => {
+        setSelectedLang('');
+        setCount(0);
     };
-
     return (
         <div className="flex items-center justify-center h-screen text-white px-4">
-            <div className="flex flex-col items-center text-gray-50 shadow-2xl shadow-white p-12 rounded-2xl gap-5 max-w-xl w-full space-y-4">
+            <div
+                className="flex flex-col items-center text-gray-50 shadow-2xl shadow-white p-12 rounded-2xl gap-5 max-w-xl w-full space-y-4">
                 <div>
                     <h1 className="text-3xl font-bold mb-1">
                         GitHub Random Repository Finder
@@ -25,7 +39,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex flex-row gap-6">
-                    <Dropdown selectedLang={selectedLang} setSelectedLang={setSelectedLang} />
+                    <Dropdown selectedLang={selectedLang} setSelectedLang={setSelectedLang}/>
 
                     <div className="flex flex-col gap-1">
                         <label htmlFor="count" className="font-medium text-sm text-gray-200 text-start">
@@ -43,13 +57,10 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-
-                <button
-                    onClick={handleSubmit}
-                    className="px-4 py-2 border border-white bg-gray-900 text-gray-100 hover:bg-gray-50 hover:text-black transition-colors transition 300 ease-in-out cursor-pointer"
-                >
-                    Fetch Repositories
-                </button>
+                <div className="flex gap-6 justify-evenly items-center">
+                    <Button content="Fetch Repositories" functionCall={handleSubmit}/>
+                    <Button content="Reset Selection" functionCall={resetOption}/>
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DisplayRepo(props) {
+function DisplayRepo(repo) {
     return (
         <div>
 
