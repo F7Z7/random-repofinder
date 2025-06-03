@@ -14,7 +14,7 @@ export default function Dropdown() {
                 id="language"
                 name="language"
                 defaultValue=""
-                className="w-full px-4 py-2 border border-white bg-gray-900 text-gray-100 rounded focus:outline-none "
+                className="w-full px-4 py-2 border border-white bg-gray-900 text-gray-100 rounded focus:border-blue-400 transition-colors transition 300 ease-in-out "
             >
 
                 <option value="" disabled>
