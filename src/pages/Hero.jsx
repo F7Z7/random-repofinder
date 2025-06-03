@@ -30,7 +30,7 @@ export default function Hero() {
         setCount(0);
     };
     return (
-        <div className="flex items-center justify-center h-screen text-white px-4">
+        <div className="flex items-center justify-center h-screen text-white px-4 flex-wrap">
             <div
                 className="flex flex-col items-center text-gray-50 shadow-2xl shadow-white p-12 rounded-2xl gap-5 max-w-xl w-full space-y-4">
                 <div>
@@ -42,7 +42,7 @@ export default function Hero() {
                     </h2>
                 </div>
 
-                <div className="flex flex-row gap-6">
+                <div className="flex lg:flex-row gap-6 flex-col">
                     <Dropdown selectedLang={selectedLang} setSelectedLang={setSelectedLang}/>
 
                     <div className="flex flex-col gap-1">
