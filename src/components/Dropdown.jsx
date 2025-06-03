@@ -1,9 +1,9 @@
 import React from "react";
 import languages from "./Languages.jsx";
 
-export default function Dropdown() {
+export default function Dropdown({ selectedLang, setSelectedLang }) {
     return (
-        <form className="w-64 text-sm">
+        <div className="w-64 text-sm">
             <label
                 htmlFor="language"
                 className="block mb-2 text-white font-semibold tracking-wide text-start"
@@ -13,19 +13,19 @@ export default function Dropdown() {
             <select
                 id="language"
                 name="language"
-                defaultValue=""
-                className="w-full px-4 py-2 border border-white bg-gray-900 text-gray-100 rounded focus:border-blue-400 transition-colors transition 300 ease-in-out "
+                value={selectedLang}
+                onChange={(e) => setSelectedLang(e.target.value)}
+                className="w-full px-4 py-2 border border-white bg-gray-900 text-gray-100 rounded focus:border-blue-400 transition-colors transition 300 ease-in-out"
             >
-
                 <option value="" disabled>
                     -- Select a language --
                 </option>
-                {languages.map(({id, languageName}) => (
+                {languages.map(({ id, languageName }) => (
                     <option key={id} value={languageName}>
                         {languageName}
                     </option>
                 ))}
             </select>
-        </form>
+        </div>
     );
 }
