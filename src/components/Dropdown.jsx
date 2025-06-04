@@ -15,7 +15,9 @@ export default function Dropdown({ selectedLang, setSelectedLang }) {
                 name="language"
                 value={selectedLang}
                 onChange={(e) => setSelectedLang(e.target.value)}
-                className="w-full px-4 py-2 border border-white bg-gray-900 text-gray-100 rounded focus:border-blue-400 transition-colors transition 300 ease-in-out"
+                className="w-full px-4 py-2 rounded-md text-white bg-gray-800/80 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200"
+
+
             >
                 <option value="" disabled>
                     -- Select a language --

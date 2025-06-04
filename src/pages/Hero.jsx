@@ -31,8 +31,11 @@ export default function Hero() {
     return (
         <div className="flex items-center justify-center h-screen text-white px-4 flex-wrap">
             <div
-                className="flex flex-col items-center text-gray-50 shadow-2xl shadow-white p-12 rounded-2xl gap-5 max-w-xl w-full space-y-4">
-                <div>
+                className="flex flex-col items-center text-white bg-[#1e293b]/60 backdrop-blur-lg  border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200  p-12 rounded-2xl gap-5 max-w-xl w-full space-y-4">
+
+
+
+            <div>
                     <h1 className="text-3xl font-bold mb-1">
                         GitHub Random Repository Finder
                     </h1>
@@ -55,7 +58,7 @@ export default function Hero() {
                             placeholder="Enter a number"
                             value={count}
                             onChange={(e) => setCount(Number(e.target.value))}
-                            className="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white focus:border-none transition-border transition 300 ease-in-out"
+                            className="p-2 rounded-md bg-white/10 backdrop-blur-sm text-white placeholder-gray-300 border border-white/30 focus:ring-2 focus:ring-blue-400 transition-all duration-200"
                             min="1"
                         />
                     </div>

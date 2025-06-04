@@ -10,8 +10,10 @@ function App() {
                 <Route
                     path="/"
                     element={
-                        <div className="flex flex-col items-center justify-center bg-gray-900 min-h-screen">
-                            <Hero />
+                        <div
+                            className="flex items-center justify-center h-screen text-white px-4 flex-wrap bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+
+                            <Hero/>
                         </div>
                     }
                 />
