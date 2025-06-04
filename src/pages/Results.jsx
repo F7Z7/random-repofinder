@@ -38,17 +38,16 @@ export default function Results() {
     if (repos.length === 0) return <p className="text-white">No repositories found.</p>;
 
     return (
-        <div className="p-8 space-y-6 max-w-4xl mx-auto flex flex-col justify-center items-center gap-2 ">
-            <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="p-4 sm:p-8 space-y-6 max-w-full sm:max-w-4xl mx-auto flex flex-col justify-center items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">
                 Top {count} repositories for {lang}
             </h2>
-            <div className="flex flex-row flex-wrap gap-4 ">
-                {repos.map(repo => (
+            <div className="flex flex-col sm:flex-row flex-wrap sm:gap-4 gap-6 justify-center">
+                {repos.map((repo) => (
                     <DisplayRepo key={repo.id} repo={repo} />
                 ))}
             </div>
             <Button content={"Return To Home Page"} functionCall={() => navigate('/')} />
-
         </div>
     );
 }
