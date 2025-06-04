@@ -63,7 +63,7 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-evenly items-center">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6justify-evenly items-center">
                     <Button content="Fetch Repositories" functionCall={handleSubmit}/>
                     <Button content="Reset Selection" functionCall={resetOption}/>
                 </div>
