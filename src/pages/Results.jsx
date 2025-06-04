@@ -19,7 +19,7 @@ export default function Results() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!lang || !count) return;
+        if (!lang || !count) return;//retun if parametrs not seclected
 
         setLoading(true);
         FetchRepo(lang, count)

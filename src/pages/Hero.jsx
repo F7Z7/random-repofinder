@@ -19,7 +19,6 @@ export default function Hero() {
 
         try {
             const repos = await FetchRepo(selectedLang, count);
-            console.log('Repos:', repos);
             navigate(`/results?lang=${selectedLang}&count=${count}`);
         } catch (error) {
             console.error('Error fetching repos:', error);
