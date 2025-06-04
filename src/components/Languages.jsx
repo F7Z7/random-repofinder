@@ -2,7 +2,7 @@ const languages = [
     { id: 1, languageName: "Python" },
     { id: 2, languageName: "JavaScript" },
     { id: 3, languageName: "C" },
-    { id: 4, languageName: "C++" },
+    { id: 4, languageName: "Cpp" },
     { id: 5, languageName: "Java" },
     { id: 6, languageName: "Go" },
     { id: 7, languageName: "Rust" },
