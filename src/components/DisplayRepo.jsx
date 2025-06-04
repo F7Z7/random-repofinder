@@ -9,12 +9,12 @@ function DisplayRepo({repo}) {
     }
     return (
         <div
-            className="bg-[#FFDCDC] rounded-2xl shadow-lg p-6 max-w-sm w-full flex flex-col items-center text-center space-y-4 hover:scale-105 transition-transform duration-300 ease-in-out"   >
+            className="bg-slate-200 rounded-2xl shadow-lg p-6 max-w-sm w-full flex flex-col flex-wrap items-center text-center space-y-4 hover:scale-105 transition-transform duration-300 ease-in-out"   >
         <div className="w-full flex justify-between items-center">
-                <h2 className="font-bold text-lg text-gray-900 truncate">{repo.name}</h2>
+                <h2 className="font-bold text-lg text-[#0f172a] truncate">{repo.name}</h2>
                 <div className="flex items-center gap-2">
                     <User className="text-gray-600"/>
-                    <span className="text-sm font-medium text-gray-800 truncate">{repo.owner.login}</span>
+                    <span className="text-sm font-medium text-[#0f173a] truncate">{repo.owner.login}</span>
                 </div>
             </div>
 
